@@ -1,0 +1,74 @@
+.nav {
+    display: flex;
+    background-color: #5B7DAE;
+    height: 100px;
+   
+}
+
+.leftBlock {
+    display: flex;
+    position: absolute;
+    left: 100px;
+}
+
+.headerLink {
+    color:  #FAFAFA;
+    font-weight: 550;
+}
+
+.brand {
+    width: 256px;
+    font-size: 25px;
+    margin-top: 35px;
+    
+}
+
+.searchBar {
+    background-color: white;
+    border-radius: 4px;
+    width: 548px;
+    height: 46px;
+    position: absolute;
+    top: 27px;
+    left: 250px;
+}
+
+.searchInput {
+    position: relative;
+    left: 10px;
+    outline: none;
+    border: none;
+    width: 510px;
+    height: 44px;
+    font-size: 16px;
+    color: #596C77;
+}
+
+.searchInput::placeholder {
+    font-size: 16px;
+    padding-top: 20px;
+    padding-left: 5px;
+}
+
+.searchImg {
+    position: relative;
+    left: 8px;
+    top: 5px
+}
+
+.userActions {
+    margin-top: 35px;
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    right: 100px;
+}
+
+.username {
+    vertical-align: 30%;
+}
+
+.userImg {
+    padding-left: 5px;
+}

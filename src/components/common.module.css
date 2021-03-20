@@ -1,0 +1,156 @@
+.mainTitle {
+    margin-top: 55px;   
+    color: #466DA6; 
+}
+
+.title {
+    font-size: 22px;
+    font-weight: 550;
+}
+
+.subtitles {
+    display: flex;
+    padding: 0;
+    margin-top: 43px;
+}
+
+.subtitle {
+    margin-right: 50px;
+    list-style-type: none; 
+}
+
+.a {
+    color: #466DA6;
+    font-size: 22px;
+}
+
+.appContainer {
+    margin-top: 50px;
+}
+
+.app {
+    margin-bottom: 20px;
+    background: #FFFFFF;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    padding: 45px;
+    width: 75%;
+    max-height: 190px; 
+}
+
+.title {
+    font-size: 20px;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px; 
+    color: #466DA6;
+    font-weight: 550;
+    font-size: 20px;
+    line-height: 16px;
+}
+
+.info {
+    color: #596C77;
+    margin-bottom: 10px;
+}
+
+.id {
+    font-size: 20px;
+    font-weight: 550;
+    font-size: 20px;
+    line-height: 142%
+}
+
+.date {
+    color: #777;
+    font-weight: 1000;
+    margin-left: 10px;
+    font-size: 12px;
+}
+
+.text {     
+    display: flex;
+    font-size: 16px;
+    line-height: 150%;
+    color: #596C77;
+    margin-bottom: 30px;
+    width: 100%;
+}  
+
+.actions {
+    display: flex;
+}
+
+.btnGreen {
+    display: block; 
+    padding: 15px 35px;
+    height: 20px;
+    width: 100px;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    font-weight: 550;
+    font-size: 16px;
+    line-height: 16px;
+    color: #fff !important;
+    background: #60BC87;
+}
+.btnGreen:hover {
+    background: #60bc86d7;
+}
+.btnGSreen:active {
+    background: #60bc86b4;
+}
+
+.btnSpan {
+    display: inline-block;
+    margin-top: 2px;
+    white-space: nowrap;
+}
+
+.submitReject {
+    margin-left: 20px;
+    display: block; 
+    height: 50px;
+    width: 160px;
+    border: none;
+    border-radius: 4px;
+    font-weight: 550;
+    font-size: 16px;
+    line-height: 16px;
+    color: #fff !important;
+    background: #DA7B7B;
+    cursor: pointer;
+    outline: none;
+}
+.submitReject:hover {
+    background: #da7b7bd5;
+}
+.submitReject:active {
+    background: #da7b7bb4;
+}
+
+
+.paginationContainer {
+    list-style: none;
+    margin-top: 60px;
+    margin-bottom: 40px;
+    color: #466DA6;
+}
+
+.item, .active {
+    display: inline;
+    font-size: 20px;
+    margin-left: 15px;
+    cursor: pointer;  
+}
+
+.active {
+    padding: 10px;
+    background-color: #60BC87;
+    border-radius: 4px;
+    cursor: pointer;  
+}
+
+.activeA{
+    color: #fff;
+}

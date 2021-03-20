@@ -1,0 +1,55 @@
+nav {
+    color: #466DA6;
+}
+
+.statusNav {
+    width: 220px
+}
+
+.title {
+    font-size: 22px;
+    padding-left: 100px;
+    padding-top: 50px;
+}
+
+.statusLink {
+    display: block;
+    padding-left: 90px;
+    padding-top: 30px;
+}
+
+.statusClock, .statusTick {
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 100%;
+    height: 38px;
+    width: 38px;
+}
+
+.activeLink .statusTick {
+    background-image:  url(./../../img/onАssessment1.svg);
+    background-color: #DA867B;
+}
+
+.activeLink .statusClock {
+    background-image:  url(./../../img/clock1.svg);
+    background-color: #DA867B;
+}
+
+
+.statusTick {
+    background-image:  url(./../../img/onАssessment2.svg);
+}
+
+.statusClock {
+    background-image: url(./../../img/clock2.svg);
+}
+
+.statusText {
+    display: inline-block;
+    color: #466DA6;
+    vertical-align: 60%;
+    font-size: 16px;
+    padding-left: 10px;
+}

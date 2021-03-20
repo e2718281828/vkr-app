@@ -1,0 +1,17 @@
+.app {
+    position: relative;
+    height: 100%;
+}
+
+.content-container {
+    display: flex;
+    min-height: 100%;
+}
+.app-content {
+    margin-left: 132px;
+}
+
+
+a {
+    text-decoration: none;
+}
