@@ -2,11 +2,14 @@ import React, { Component } from 'react';
 import { NavLink } from "react-router-dom";
 import s from "./List-of-apps.module.css";
 import del from "./../../../img/delete.svg";
+import { Route } from "react-router-dom";
+import Application from "../Application/Application"
 
 class ApplicationDemo extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
+            data: props.data,
             editMode: false
         }
     }
@@ -17,19 +20,22 @@ class ApplicationDemo extends React.Component{
     }
 
     render() {
+        const {id, title, date, text, main_idea, work_type, data, prefer_date} = this.state.data
+        const path = '/app/application-info/';
+
         return (
             <article className={s.app}>
-                <div className={s.title}>Краткое описание</div>
+                <div className={s.title}>{title}</div>
                 <div className={s.info}>
-                    <span className={s.id}>#4</span>
-                    <span className={s.date}>31 октября, 14:14</span>
+                    <span className={s.id}>#{id}</span>
+                    <span className={s.date}>{date}</span>
                 </div>
                 <div className={s.text}>
-                    Информационно-аналитическая система экологического мониторинга (ИАСЭМ) предназначена для автоматизации
-                    процесса сбора, хранения, обработки и представления информации...
+                    {text}
                 </div>
                 <div className={s.actions}>
-                    <NavLink className={s.btn, s.btnGreen} to="/app/application-info">
+                   
+                    <NavLink className={s.btn, s.btnGreen} to={path + id}>
                         <span className={s.btnSpan}>Подробнее</span>
                     </NavLink>
                     <button className={s.submitReject} onClick={this.handleClick}>Отклонить</button>

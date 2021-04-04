@@ -11,8 +11,6 @@ import ListOfAppsOnAssessmentManager from './components/Content/List-of-apps/Lis
 import Application from './components/Content/Application/Application';
 
 
-
-
 const App = () => {
   return (
     <div className="app">
@@ -26,7 +24,7 @@ const App = () => {
           <Route path='/app/notifications' render={() => <Notifications />} />
           <Route path='/app/personal-page' render={() => <PersonalPage />} />
           <Route path='/app/personal-page-manager' render={() => <PersonalPageManager />} />
-          <Route path='/app/application-info' render={() => <Application/> } />
+          
         </div>
 
       </div>

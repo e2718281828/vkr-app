@@ -1,0 +1,63 @@
+.title {
+    font-size: 20px;
+    line-height: 22px;
+    letter-spacing: 0.5px;
+    color: #466DA6;
+    margin-bottom: 45px;
+}
+
+.titleStatus {
+    margin-left: 5px;
+    font-size: 16px;
+    color: #596C77;
+}
+
+.subtitle {
+    font-weight: 550;
+    font-size: 22px;
+    line-height: 150%;
+    letter-spacing: 0.5px;
+    margin-bottom: 40px;
+    color: #466DA6;
+}
+
+.date {
+    font-size: 14px;
+    color: #596C77;
+    margin-bottom: 15px;
+}
+
+.info {
+    display: block;
+    padding: 20px;
+    background: #FBFBFB;
+    border: 1px solid #E4E4E4;
+    border-radius: 4px;
+    width: 85%;
+    margin-bottom: 25px;
+}
+
+.li {
+    list-style: none;
+    padding: 15px;
+    color: #596C77;
+    font-size: 16px;
+    line-height: 150%;   
+}
+
+.item {
+    font-weight: 550;
+}
+
+.showHideAttachedFiles {
+    background-color: rgba(0, 0, 0, 0);
+    color: #466DA6;
+    border: none;
+    font-size: 16px; 
+    outline: none;
+}
+
+.img {
+    margin-left: 5px;
+    height: 12px;
+}

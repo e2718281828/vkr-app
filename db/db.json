@@ -1,0 +1,33 @@
+{
+    "applications": [{
+        "id": 1,
+        "title": "Title 1",
+        "date": "12.03.2020",
+        "text": "Text 1",
+        "main_idea": "Main idea 1",
+        "work_type": "Work type 1",
+        "data": "Data 1",
+        "prefer_date": "Prefer date 1"
+    }, {
+        "id": 2,
+        "title": "Title 2",
+        "date": "14.03.2020",
+        "text": "Text 2",
+        "main_idea": "Main idea 2",
+        "work_type": "Work type 2",
+        "data": "Data 2",
+        "prefer_date": "Prefer date 2"
+    }, {    
+        "id": 3,
+        "title": "Title 3",
+        "date": "16.03.2020",
+        "text": "Text 3",
+        "main_idea": "Main idea 3",
+        "work_type": "Work type 3",
+        "data": "Data 3",
+        "prefer_date": "Prefer date 3"
+    }],
+    "users": [{
+        
+    }]
+}
