@@ -1,33 +1,52 @@
 {
-    "applications": [{
-        "id": 1,
-        "title": "Title 1",
-        "date": "12.03.2020",
-        "text": "Text 1",
-        "main_idea": "Main idea 1",
-        "work_type": "Work type 1",
-        "data": "Data 1",
-        "prefer_date": "Prefer date 1"
-    }, {
-        "id": 2,
-        "title": "Title 2",
-        "date": "14.03.2020",
-        "text": "Text 2",
-        "main_idea": "Main idea 2",
-        "work_type": "Work type 2",
-        "data": "Data 2",
-        "prefer_date": "Prefer date 2"
-    }, {    
-        "id": 3,
-        "title": "Title 3",
-        "date": "16.03.2020",
-        "text": "Text 3",
-        "main_idea": "Main idea 3",
-        "work_type": "Work type 3",
-        "data": "Data 3",
-        "prefer_date": "Prefer date 3"
-    }],
-    "users": [{
-        
-    }]
+    "applications": [
+        {
+            "id": 1,
+            "title": "Title 1",
+            "date": "12.03.2020",
+            "text": "Text 1",
+            "main_idea": "Main idea 1",
+            "work_type": "Work type 1",
+            "data": "Data 1",
+            "prefer_date": "Prefer date 1",
+            "comments": [
+                {
+                    "user": "Исполнитель",
+                    "commentDate": "11.11.2020, 14:14",
+                    "comment": "Какие исходные данные и требования? В случае превышения лимитов процессы, вызывающие перегрузку, могут быть отключены? Какие исходные данные и требования? В случае превышения лимитов процессы, вызывающие перегрузку, могут быть отключены?"
+                },
+                {
+                    "user": "Исполнитель",
+                    "commentDate": "12.11.2020, 14:50",
+                    "comment": "Какие исходные данные и требования?"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Title 2",
+            "date": "14.03.2020",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque perferendis suscipit velit? Distinctio iure maxime consectetur necessitatibus labore nihil adipisci eum temporibus assumenda nisi, magni omnis nulla nostrum eveniet odio.",
+            "main_idea": "Main idea 2",
+            "work_type": "Work type 2",
+            "data": "Data 2",
+            "prefer_date": "Prefer date 2",
+            "comments": [
+                {}
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Title 3",
+            "date": "16.03.2020",
+            "text": "Text 3",
+            "main_idea": "Main idea 3",
+            "work_type": "Work type 3",
+            "data": "Data 3",
+            "prefer_date": "Prefer date 3",
+            "comments": [
+                {}
+            ]
+        }
+    ]
 }

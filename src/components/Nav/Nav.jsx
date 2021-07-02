@@ -21,7 +21,10 @@ const Nav = () => {
                         <span className={Styles.statusText}>В работе</span>
                     </NavLink>
                 </div>
+
             </div>
+
+
         </nav>
     )
 }

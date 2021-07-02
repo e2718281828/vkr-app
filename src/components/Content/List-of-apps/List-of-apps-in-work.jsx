@@ -10,38 +10,47 @@ import discard from "./../../../img/delete.svg";
 import filter from "./../../../img/filter.svg";
 import add from "./../../../img/add.svg";
 import pin from "./../../../img/pin.svg";
-import ApplicationDemo from './ApplicationDemo';
-import reactDom from 'react-dom';
+import ApplicationPreview from './ApplicationPreview';
 
-class ListOfAppsOnAssessmentManager extends React.Component {
+class ListOfAppsInWork extends React.Component {
+
     constructor(props) {
         super(props);
         this.state = {
+            manager: props.manager,
             editModeNewApp: false,
-            editModeFilter: false
+            editModeFilter: false,
+            error: null,
+            isLoaded: false,
         }
     }
 
     showHideNewApp = () => {
         this.setState({
-            editModeNewApp: !this.state.editModeNewApp
+            editModeNewApp: !this.state.editModeNewApp,
         });
     }
 
     showHideFilter = () => {
         this.setState({
-            editModeFilter: !this.state.editModeFilter
+            editModeFilter: !this.state.editModeFilter,
         });
     }
 
     render() {
+
         return (
             <div>
                 <div className={Styles.mainTitle}>
-                    <button className={s.btnAdd} onClick={this.showHideNewApp}>
-                        <span className={s.new}>Новая</span>
-                        <img src={add} className={s.add} />
-                    </button>
+
+                    {
+                        this.state.manager &&
+
+                        <button className={s.btnAdd} onClick={this.showHideNewApp}>
+                            <span className={s.new}>Новая</span>
+                            <img src={add} className={s.add} />
+                        </button>
+                    }
 
                     {
                         this.state.editModeNewApp &&
@@ -125,17 +134,41 @@ class ListOfAppsOnAssessmentManager extends React.Component {
                     }
 
                     <div className={Styles.title}>Список заявок</div>
-                    <ul className={Styles.subtitles}>
-                        <li className={Styles.subtitle}>
-                            <NavLink to="#" className={Styles.a}>На оценке</NavLink>
-                        </li>
-                        <li className={Styles.subtitle}>
-                            <NavLink to="#" className={Styles.a}>Есть вопросы</NavLink>
-                        </li>
-                        <li className={Styles.subtitle}>
-                            <NavLink to="#" className={Styles.a}>Оцененные</NavLink>
-                        </li>
-                    </ul>
+
+                    {
+                        !this.state.manager &&
+
+                        <ul className={Styles.subtitles}>
+                            <li className={Styles.subtitle}>
+                                <NavLink to="#" className={Styles.a}>Новые</NavLink>
+                            </li>
+                            <li className={Styles.subtitle}>
+                                <NavLink to="#" className={Styles.a}>Оцененные</NavLink>
+                            </li>
+                            <li className={Styles.subtitle}>
+                                <NavLink to="#" className={Styles.a}>Отклоненные</NavLink>
+                            </li>
+                        </ul>
+
+                    }
+
+                    {
+                        this.state.manager &&
+                        
+                        <ul className={Styles.subtitles}>
+                            <li className={Styles.subtitle}>
+                                <NavLink to="#" className={Styles.a}>На оценке</NavLink>
+                            </li>
+                            <li className={Styles.subtitle}>
+                                <NavLink to="#" className={Styles.a}>Есть вопросы</NavLink>
+                            </li>
+                            <li className={Styles.subtitle}>
+                                <NavLink to="#" className={Styles.a}>Оцененные</NavLink>
+                            </li>
+                        </ul>
+
+                    }
+
 
                     <div className={Styles.filter}>
                         <button className={Styles.openFilter} onClick={this.showHideFilter} >
@@ -147,14 +180,14 @@ class ListOfAppsOnAssessmentManager extends React.Component {
                             <NavLink to="#" className={Styles.filterButton}>
                                 <img src={confirm} className={Styles.img} />
                             Подтвердить
-                            </NavLink>
+                        </NavLink>
                             <NavLink to="#" className={Styles.filterButton}>
                                 <img src={discard} className={Styles.img} />
-                                Сбросить
-                            </NavLink>
+                            Сбросить
+                        </NavLink>
                         </div>
 
-                        { 
+                        {
                             this.state.editModeFilter &&
 
                             <div className={Styles.list} id="list">
@@ -235,13 +268,10 @@ class ListOfAppsOnAssessmentManager extends React.Component {
 
                     </div>
                 </div>
-                <div className={s.appContainer}>
-                    <ApplicationDemo />
-                    <ApplicationDemo />
-                    <ApplicationDemo />
-                </div>
+                
 
-                <div className={s.paginationContainer}>
+
+                {/* <div className={s.paginationContainer}>
                     <ul className={s.pagination}>
                         <li className={s.item}>
                             <img src={arrowLgray} alt="" />
@@ -265,11 +295,13 @@ class ListOfAppsOnAssessmentManager extends React.Component {
                             <img src={arrowRgreen} alt="" />
                         </li>
                     </ul>
-                </div>
+                </div> */}
             </div>
+
         )
     }
 
+
 }
 
-export default ListOfAppsOnAssessmentManager;
+export default ListOfAppsInWork;

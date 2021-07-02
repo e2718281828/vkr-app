@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import { NavLink } from "react-router-dom";
 import s from "./List-of-apps.module.css";
 import del from "./../../../img/delete.svg";
-import { Route } from "react-router-dom";
-import Application from "../Application/Application"
 
-class ApplicationDemo extends React.Component{
+
+class ApplicationPreview extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
@@ -34,7 +33,7 @@ class ApplicationDemo extends React.Component{
                     {text}
                 </div>
                 <div className={s.actions}>
-                   
+                    
                     <NavLink className={s.btn, s.btnGreen} to={path + id}>
                         <span className={s.btnSpan}>Подробнее</span>
                     </NavLink>
@@ -58,9 +57,10 @@ class ApplicationDemo extends React.Component{
 
 
                 </div>
+                
             </article>
         )
     }
 }
 
-export default ApplicationDemo;
+export default ApplicationPreview;

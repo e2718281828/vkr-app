@@ -11,7 +11,7 @@ const Header = () => {
       <header className={Styles.nav}>
           <div className={Styles.leftBlock}>
             <div className={Styles.brand}>
-              <NavLink className={Styles.headerLink} to="/app/list-of-apps-on-assessment">Dynamic 365</NavLink>
+              <NavLink className={Styles.headerLink} to="/app/list-of-apps-on-assessment">Dynamics 365</NavLink>
             </div>
             
             <div className={Styles.searchBar}>

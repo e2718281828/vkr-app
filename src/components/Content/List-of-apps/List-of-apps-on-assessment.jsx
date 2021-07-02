@@ -8,20 +8,24 @@ import del from "./../../../img/delete.svg";
 import confirm from "./../../../img/confirm.svg";
 import discard from "./../../../img/delete.svg";
 import filter from "./../../../img/filter.svg";
-import ApplicationDemo from './ApplicationDemo';
+import add from "./../../../img/add.svg";
+import pin from "./../../../img/pin.svg";
+import ApplicationPreview from './ApplicationPreview';
 
 class ListOfAppsOnAssessment extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
+            manager: props.manager,
+            editModeNewApp: false,
             editModeFilter: false,
             error: null,
             isLoaded: false,
             applications: []
         }
     }
-
+    
     componentDidMount() {
         fetch("http://localhost:3030/applications")
             .then(res => res.json())
@@ -41,14 +45,20 @@ class ListOfAppsOnAssessment extends React.Component {
             )
     }
 
+    showHideNewApp = () => {
+        this.setState({
+            editModeNewApp: !this.state.editModeNewApp,
+        });
+    }
+
     showHideFilter = () => {
         this.setState({
-            editModeFilter: !this.state.editModeFilter
+            editModeFilter: !this.state.editModeFilter,
         });
     }
 
     render() {
-        const {isLoaded, error, applications } = this.state;
+        const { isLoaded, error, applications } = this.state;
 
         if (error) {
             return <div>Ошибка: {error.message}</div>;
@@ -59,18 +69,133 @@ class ListOfAppsOnAssessment extends React.Component {
         return (
             <div>
                 <div className={Styles.mainTitle}>
+
+                    {
+                        this.state.manager &&
+
+                        <button className={s.btnAdd} onClick={this.showHideNewApp}>
+                            <span className={s.new}>Новая</span>
+                            <img src={add} className={s.add} />
+                        </button>
+                    }
+
+                    {
+                        this.state.editModeNewApp &&
+
+                        <div>
+                            <div className={s.newAppShadow} id="newAppShadow"></div>
+
+                            <div className={s.newAppContainer} id="newApp">
+                                <form action="">
+                                    <div className={s.newApp}>
+                                        <div className={s.newTitleContainer}>
+                                            <div className={s.newTitle}>Новая заявка</div>
+                                            <button className={s.newRejectClose} onClick={this.showHideNewApp}><img src={del} className={s.newCloseImg} /></button>
+                                        </div>
+
+                                        <div className={s.newSubtitle}>Заявка будет отправлена на оценку</div>
+                                        <div>
+                                            <div className={s.newItem}>
+                                                <div className={s.newText}>Имя</div>
+                                                <input className={s.newInput} type="text" placeholder="Введите имя" />
+                                            </div>
+                                            <div className={s.newItem}>
+                                                <div className={s.newText}>Телефон для звонков</div>
+                                                <input className={s.newInput} type="text" placeholder="+7 999 888 77 66" />
+                                            </div>
+                                            <div className={s.newItem}>
+                                                <div className={s.newText}>WhatsApp</div>
+                                                <input className={s.newInput} type="text" placeholder="+7 999 888 77 66" />
+                                            </div>
+                                            <div className={s.newItem}>
+                                                <div className={s.newText}>E-mail</div>
+                                                <input className={s.newInput} type="text" placeholder="name@info.com" />
+                                            </div>
+                                            <div>
+                                                <div className={s.newText}>Тип работы</div>
+                                                <select className={s.select}>
+                                                    <option selected="selected">Выберите тип работы</option>
+                                                    <option>Первый тип работ</option>
+                                                    <option>Второй тип работ</option>
+                                                    <option>Третий тип работ</option>
+                                                    <option>Четвертый тип работ</option>
+                                                </select>
+                                            </div>
+                                            <div className={s.newItem}>
+                                                <div className={s.newText}>Основная идея</div>
+                                                <input className={s.newInput} type="text" placeholder="Введите название" />
+                                            </div>
+                                            <div className={s.newItem}>
+                                                <div className={s.newText}>Исходные данные и требования</div>
+                                                <textarea className={s.textarea} cols="30" rows="10" placeholder="Введите текст"></textarea>
+                                            </div>
+                                            <div className={s.pin}>
+                                                <label className={s.pinLabel} >
+                                                    <input type="file" className={s.inputFile} />
+                                                    <img src={pin} className={s.pinImg} />
+                                                    <span className={s.attachFile}>Прикрепить файлы</span>
+                                                </label>
+                                            </div>
+                                            <div className={s.newItem}>
+                                                <div className={s.attachedFile}>
+                                                    <div className={s.newImg}><img className={s.attachedPpinImg} src={pin} alt="" /></div>
+                                                    <a className={s.newDownload} type="download">Документ.txt</a>
+                                                </div>
+                                                <div>
+                                                    <input className={s.newInput} type="text" placeholder="Введите коментарий к файлу" />
+                                                </div>
+                                            </div>
+                                            <div className={s.newItem}>
+                                                <div className={s.newText}>Желаемый срок</div>
+                                                <input className={s.newInput} type="date" name="" id=""></input>
+                                            </div>
+                                            <div className={s.newItem}>
+                                                <button className={s.btnGreen} onClick={this.showHideNewApp}>Создать</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                    }
+
                     <div className={Styles.title}>Список заявок</div>
-                    <ul className={Styles.subtitles}>
-                        <li className={Styles.subtitle}>
-                            <NavLink to="#" className={Styles.a}>Новые</NavLink>
-                        </li>
-                        <li className={Styles.subtitle}>
-                            <NavLink to="#" className={Styles.a}>Оцененные</NavLink>
-                        </li>
-                        <li className={Styles.subtitle}>
-                            <NavLink to="#" className={Styles.a}>Отклоненные</NavLink>
-                        </li>
-                    </ul>
+
+                    {
+                        !this.state.manager &&
+
+                        <ul className={Styles.subtitles}>
+                            <li className={Styles.subtitle}>
+                                <NavLink to="#" className={Styles.a}>Новые</NavLink>
+                            </li>
+                            <li className={Styles.subtitle}>
+                                <NavLink to="#" className={Styles.a}>Оцененные</NavLink>
+                            </li>
+                            <li className={Styles.subtitle}>
+                                <NavLink to="#" className={Styles.a}>Отклоненные</NavLink>
+                            </li>
+                        </ul>
+
+                    }
+
+                    {
+                        this.state.manager &&
+                        
+                        <ul className={Styles.subtitles}>
+                            <li className={Styles.subtitle}>
+                                <NavLink to="#" className={Styles.a}>На оценке</NavLink>
+                            </li>
+                            <li className={Styles.subtitle}>
+                                <NavLink to="#" className={Styles.a}>Есть вопросы</NavLink>
+                            </li>
+                            <li className={Styles.subtitle}>
+                                <NavLink to="#" className={Styles.a}>Оцененные</NavLink>
+                            </li>
+                        </ul>
+
+                    }
+
 
                     <div className={Styles.filter}>
                         <button className={Styles.openFilter} onClick={this.showHideFilter} >
@@ -173,12 +298,10 @@ class ListOfAppsOnAssessment extends React.Component {
                 <div className={s.appContainer}>
                     {applications.map(item => (
                         <div>
-                            <ApplicationDemo data={item} />
+                            <ApplicationPreview data={item} />
                         </div>
                     ))}
-                    {/* <ApplicationDemo id="1" />
-                    <ApplicationDemo id="2" />
-                    <ApplicationDemo id="3" /> */}
+
                 </div>
 
 

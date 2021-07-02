@@ -9,7 +9,7 @@ const Search = () => {
     return (
         <div>
             <div className={Styles.mainTitle}>
-                <div className={Styles.title}>Поиск: Безопасность</div>
+                <div className={Styles.title}>Поиск: #4</div>
                 <ul className={Styles.subtitles}>
                     <li className={Styles.subtitle}>
                         <NavLink to="#" className={Styles.a}>Все</NavLink>
@@ -27,10 +27,13 @@ const Search = () => {
             </div>
             <div className={Styles.appContainer}>
                 <article className={Styles.app}>
-                    <div className={Styles.title}>Политика контроля данных в типовом учреждении УИС</div>
+                    <div className={Styles.title}><b>#4</b> Политика контроля данных в типовом учреждении УИС</div>
                     <div className={Styles.text}>
-                        ...информационно-аналитическая система экологического мониторинга (ИАСЭМ) предназначена для автоматизации
-                        процесса сбора, хранения, обработки и представления информации...
+                        <span>
+                            ...информационно-аналитическая система экологического мониторинга (ИАСЭМ) предназначена для автоматизации
+                            процесса сбора, хранения, обработки и представления информации...
+                        </span>
+
                     </div>
                     <div className={Styles.actions}>
                         <NavLink className={Styles.btnGreen} to="#">

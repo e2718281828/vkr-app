@@ -58,7 +58,7 @@ const Notifications = () => {
                 </article>
             </div>
 
-            <div className={Styles.paginationContainer}>
+            {/* <div className={Styles.paginationContainer}>
                 <ul className={Styles.pagination}>
                     <li className={Styles.item}>
                         <img src={arrowLgray} alt="" />
@@ -83,7 +83,7 @@ const Notifications = () => {
                     </li>
 
                 </ul>
-            </div>
+            </div> */}
 
         </div>
 
