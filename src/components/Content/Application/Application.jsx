@@ -18,8 +18,7 @@ class Application extends React.Component {
             showHideAttachedFiles: true,
             takePopUp: false,
             askAQuestion: false,
-            comment: "",
-            comments: [{}],
+            comments: [],
             commentBody: ""
         }
     }
