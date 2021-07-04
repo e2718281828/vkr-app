@@ -18,7 +18,7 @@ class Application extends React.Component {
             showHideAttachedFiles: true,
             takePopUp: false,
             askAQuestion: false,
-            comments: [],
+            comments: props.data.comments,
             commentBody: ""
         }
     }
@@ -48,7 +48,7 @@ class Application extends React.Component {
     }
 
     sendComment = () => {
-        this.state.comments = {
+        const newComment = {
             user: "исполнитель",
             commentDate: "12.11.2020, 14:50",
             comment: this.state.commentBody
@@ -56,7 +56,8 @@ class Application extends React.Component {
 
         this.setState({
             askAQuestion: !this.state.askAQuestion,
-            commentBody: ''
+            commentBody: '',
+            comments: this.state.comments.concat(newComment)
         })
 
         console.log(this.state.comments)
@@ -78,7 +79,8 @@ class Application extends React.Component {
 
     render() {
 
-        const { id, title, date, text, main_idea, work_type, data, prefer_date, comments } = this.state.data;
+        const { id, title, date, text, main_idea, work_type, data, prefer_date } = this.state.data;
+        const comments = this.state.comments;
 
         return (
             <div classs={s.applicatonContainer}>
