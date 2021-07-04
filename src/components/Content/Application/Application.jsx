@@ -18,26 +18,49 @@ class Application extends React.Component {
             showHideAttachedFiles: true,
             takePopUp: false,
             askAQuestion: false,
-            comments: [],
+            comment: "",
+            comments: [{}],
+            commentBody: ""
         }
     }
+
+    onCommentChange = (event) => {
+        this.setState({ commentBody: event.target.value })
+    }
+
 
     showHideComments = () => {
         this.setState({
             showHideComments: !this.state.showHideComments
-        });
+        })
     }
 
     showHideAttachedFiles = () => {
         this.setState({
             showHideAttachedFiles: !this.state.showHideAttachedFiles
-        });
+        })
     }
 
     askAQuestion = () => {
         this.setState({
-            askAQuestion: !this.state.askAQuestion
+            askAQuestion: !this.state.askAQuestion,
+            commentBody: ''
         })
+    }
+
+    sendComment = () => {
+        this.state.comments = {
+            user: "исполнитель",
+            commentDate: "12.11.2020, 14:50",
+            comment: this.state.commentBody
+        }
+
+        this.setState({
+            askAQuestion: !this.state.askAQuestion,
+            commentBody: ''
+        })
+
+        console.log(this.state.comments)
     }
 
     takePopUp = () => {
@@ -57,10 +80,6 @@ class Application extends React.Component {
     render() {
 
         const { id, title, date, text, main_idea, work_type, data, prefer_date, comments } = this.state.data;
-
-        comments.map(item => (
-            this.state.comments = item
-        ))
 
         return (
             <div classs={s.applicatonContainer}>
@@ -166,7 +185,13 @@ class Application extends React.Component {
                             {
                                 this.state.askAQuestion &&
                                 <div className={s.replyInputCont}>
-                                    <textarea className={s.replyInput} placeholder="Введите комментарий"></textarea>
+                                    <textarea
+                                        className={s.replyInput}
+                                        placeholder="Введите комментарий"
+                                        value={this.state.commentBody}
+                                        onChange={this.onCommentChange}
+                                    >
+                                    </textarea>
 
                                     <div className={s.underReply}>
                                         <div className={s.replyFileCont}>
@@ -177,7 +202,7 @@ class Application extends React.Component {
                                             </label>
                                         </div>
 
-                                        <button className={s.sendBtn} onClick={this.askAQuestion}>Отправить</button>
+                                        <button className={s.sendBtn} onClick={this.sendComment}>Отправить</button>
                                     </div>
 
                                     <div>
