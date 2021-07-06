@@ -5,7 +5,7 @@ import hide from "./../../../img/hide.svg";
 import pin from "./../../../img/pin.svg";
 import add from "./../../../img/add.svg";
 import close from "./../../../img/delete.svg";
-import Comment from "./Comment.jsx";
+import Comment from "./Comment-&-reply/Comment.jsx";
 
 class Application extends React.Component {
     constructor(props) {
@@ -47,11 +47,20 @@ class Application extends React.Component {
         })
     }
 
+    role = () => {
+        if (this.state.manager === true) {
+            return "Менеджер"
+        } else {
+            return "Исполнитель"
+        }
+    }
+
     sendComment = () => {
         const newComment = {
-            user: "исполнитель",
-            commentDate: "12.11.2020, 14:50",
-            comment: this.state.commentBody
+            user: this.role(),
+            commentDate: "12.11.2020, 15:30",
+            comment: this.state.commentBody,
+            replys: []
         }
 
         this.setState({
@@ -59,8 +68,6 @@ class Application extends React.Component {
             commentBody: '',
             comments: this.state.comments.concat(newComment)
         })
-
-        console.log(this.state.comments)
     }
 
     takePopUp = () => {
@@ -80,6 +87,7 @@ class Application extends React.Component {
     render() {
 
         const { id, title, date, text, main_idea, work_type, data, prefer_date } = this.state.data;
+        
         const comments = this.state.comments;
 
         return (
@@ -180,7 +188,7 @@ class Application extends React.Component {
                         <div className={s.comments}>
                             <button className={s.ask} onClick={this.askAQuestion}>
                                 <img src={add} />
-                                <span className={s.askText}>Задать вопрос</span>
+                                <span className={s.askText}>Задать вопрос или оставить комментарий</span>
                             </button>
 
                             {
@@ -219,16 +227,14 @@ class Application extends React.Component {
                                 </div>
                             }
 
-
+                            {
+                                comments.map(item => (
+                                    <div>
+                                        <Comment manager={this.state.manager} comments={item} />
+                                    </div>
+                                ))}
                         </div>
                     }
-
-                    {comments.map(item => (
-                        <div>
-                            <Comment comments={item} />
-                        </div>
-                    ))}
-
 
                 </div>
 

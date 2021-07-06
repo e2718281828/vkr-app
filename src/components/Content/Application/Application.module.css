@@ -54,6 +54,11 @@
     margin-bottom: 20px;
 }
 
+.replyComment {
+    margin-left: 50px;
+    margin-right: 13px;
+}
+
 .attachedFiles, .reply {
     background-color: rgba(0, 0, 0, 0);
     color: #466DA6;
@@ -267,9 +272,23 @@
     display: none;
 }
 
+.noComments {
+    margin: 40px 0 80px 0;
+    color: #596C77;
+    font-size: 22px;
+    font-weight: 550;
+    background: #FBFBFB;
+    border: 1px solid #E4E4E4;
+    border-radius: 4px;
+    padding: 20px;
+    min-width: 500px;
+    max-width: 80%;
+    font-size: 16px;
+    line-height: 150%;
+}
 
 .takeToWork {
-    margin-top: 1em;
+    margin-top: 60px;
 }
 
 .takeToWorkTitle {

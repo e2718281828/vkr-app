@@ -22,7 +22,8 @@ class ListOfAppsOnAssessment extends React.Component {
             editModeFilter: false,
             error: null,
             isLoaded: false,
-            applications: []
+            applications: [],
+            
         }
     }
     
@@ -301,7 +302,6 @@ class ListOfAppsOnAssessment extends React.Component {
                             <ApplicationPreview data={item} />
                         </div>
                     ))}
-
                 </div>
 
 
