@@ -10,7 +10,7 @@ import Reset from './components/Content/Login/Reset';
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Route path='/app/*' render={() => <App manager={false}/> } />
+      <Route path='/app/*' render={() => <App manager={true}/> } />
       <Route path='/login' render={() => <Login/> } />
       <Route path='/reset' render={() => <Reset/> } />
     </BrowserRouter>

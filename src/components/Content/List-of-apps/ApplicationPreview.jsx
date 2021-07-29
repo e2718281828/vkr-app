@@ -19,7 +19,7 @@ class ApplicationPreview extends React.Component{
     }
 
     render() {
-        const {id, title, date, text, main_idea, work_type, data, prefer_date} = this.state.data
+        const {id, title, date, text} = this.state.data
         const path = '/app/application-info/';
 
         return (

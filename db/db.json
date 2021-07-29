@@ -6,7 +6,7 @@
             "date": "12.03.2020",
             "text": "Text 1",
             "main_idea": "Main idea 1",
-            "work_type": "Work type 1",
+            "work_type": "1",
             "data": "Data 1",
             "prefer_date": "Prefer date 1",
             "comments": [
@@ -47,7 +47,7 @@
             "date": "14.03.2020",
             "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque perferendis suscipit velit? Distinctio iure maxime consectetur necessitatibus labore nihil adipisci eum temporibus assumenda nisi, magni omnis nulla nostrum eveniet odio.",
             "main_idea": "Main idea 2",
-            "work_type": "Work type 2",
+            "work_type": "2",
             "data": "Data 2",
             "prefer_date": "Prefer date 2",
             "comments": [
@@ -69,9 +69,75 @@
             "date": "16.03.2020",
             "text": "Text 3",
             "main_idea": "Main idea 3",
-            "work_type": "Work type 3",
+            "work_type": "3",
             "data": "Data 3",
             "prefer_date": "Prefer date 3",
+            "comments": [
+                {
+                    "user": "",
+                    "commentDate": "",
+                    "comment": "",
+                    "replys": [{
+                        "user": "",
+                        "commentDate": "",
+                        "comment": ""
+                    }]
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Title 4",
+            "date": "16.03.2020",
+            "text": "Text 4",
+            "main_idea": "Main idea 4",
+            "work_type": "4",
+            "data": "Data 4",
+            "prefer_date": "Prefer date 4",
+            "comments": [
+                {
+                    "user": "",
+                    "commentDate": "",
+                    "comment": "",
+                    "replys": [{
+                        "user": "",
+                        "commentDate": "",
+                        "comment": ""
+                    }]
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Title 5",
+            "date": "16.03.2020",
+            "text": "Text 5",
+            "main_idea": "Main idea 5",
+            "work_type": "5",
+            "data": "Data 5",
+            "prefer_date": "Prefer date 5",
+            "comments": [
+                {
+                    "user": "",
+                    "commentDate": "",
+                    "comment": "",
+                    "replys": [{
+                        "user": "",
+                        "commentDate": "",
+                        "comment": ""
+                    }]
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "title": "Title 6",
+            "date": "16.03.2020",
+            "text": "Text 6",
+            "main_idea": "Main idea 6",
+            "work_type": "6",
+            "data": "Data 6",
+            "prefer_date": "Prefer date 6",
             "comments": [
                 {
                     "user": "",

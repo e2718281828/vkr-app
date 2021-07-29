@@ -22,11 +22,11 @@ class ListOfAppsOnAssessment extends React.Component {
             editModeFilter: false,
             error: null,
             isLoaded: false,
+            inputBody: "",
             applications: [],
-            
         }
     }
-    
+
     componentDidMount() {
         fetch("http://localhost:3030/applications")
             .then(res => res.json())
@@ -58,8 +58,24 @@ class ListOfAppsOnAssessment extends React.Component {
         });
     }
 
+    hideFilter = () => {
+        this.setState({
+            editModeFilter: false
+        })
+    }
+
+    onFilterChange = (event) => {
+
+    }
+
     render() {
         const { isLoaded, error, applications } = this.state;
+
+        const workTypes = {};
+
+        for (let i=0; i < applications.length; i++) {
+            workTypes[i] = applications[i].work_type; 
+        }
 
         if (error) {
             return <div>Ошибка: {error.message}</div>;
@@ -182,7 +198,7 @@ class ListOfAppsOnAssessment extends React.Component {
 
                     {
                         this.state.manager &&
-                        
+
                         <ul className={Styles.subtitles}>
                             <li className={Styles.subtitle}>
                                 <NavLink to="#" className={Styles.a}>На оценке</NavLink>
@@ -201,18 +217,18 @@ class ListOfAppsOnAssessment extends React.Component {
                     <div className={Styles.filter}>
                         <button className={Styles.openFilter} onClick={this.showHideFilter} >
                             <img src={filter} className={Styles.img} />
-                        Фильтр по типу работ
+                            Фильтр по типу работ
                         </button>
 
                         <div className={Styles.filterButtons}>
-                            <NavLink to="#" className={Styles.filterButton}>
+                            <button className={Styles.filterButton} onClick={this.hideFilter}>
                                 <img src={confirm} className={Styles.img} />
-                            Подтвердить
-                        </NavLink>
-                            <NavLink to="#" className={Styles.filterButton}>
+                                Подтвердить
+                            </button>
+                            <button to="#" className={Styles.filterButton} onClick={this.hideFilter}>
                                 <img src={discard} className={Styles.img} />
-                            Сбросить
-                        </NavLink>
+                                Сбросить
+                            </button>
                         </div>
 
                         {
